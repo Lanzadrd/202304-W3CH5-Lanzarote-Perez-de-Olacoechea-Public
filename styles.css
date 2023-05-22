@@ -2,11 +2,35 @@
   box-sizing: border-box;
 }
 
+html {
+  background-color: rgb(68, 68, 68);
+}
+
 .main-header {
   display: flex;
   flex-direction: column;
   align-items: center;
   align-content: center;
+}
+
+.buttons_container {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  width: 20vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button {
+  background-color: wheat(223, 220, 15);
+  border: 2px solid blue;
+  border-radius: 20% 10% 20% 10%;
+}
+
+.button:hover {
+  background-color: blue;
+  color: wheat;
 }
 
 ul {
@@ -21,10 +45,10 @@ ul {
 }
 
 li {
-  background-color: antiquewhite;
+  background-color: rgb(138, 138, 138);
   border: 2px solid black;
   display: flex;
-  max-height: 67vh;
+  height: 15rem;
   flex-direction: column;
   align-items: center;
   border-radius: 25%;
@@ -34,12 +58,12 @@ li {
 li span {
   margin-top: 10%;
   font-family: "Pokemon Solid", sans-serif;
-  font-weight: 200;
+  font-weight: 20;
   font-size: 1.2rem;
 }
 
 li img {
-  margin-top: 10%;
+  margin-top: 20%;
 }
 
 li:hover {
