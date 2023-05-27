@@ -27,10 +27,10 @@ export class Card extends Component {
   handleClick = async (element: { srcElement: { id: string } }) => {
     let nextFetch;
     if (element.srcElement.id === "next") {
-      nextFetch = await fetch(`${this.pokemon.next}`);
+      nextFetch = await fetch(`${this.pokemon.info.next}`);
     }
     if (element.srcElement.id === "back") {
-      nextFetch = await fetch(`${this.pokemon.previous}`);
+      nextFetch = await fetch(`${this.pokemon.info.prev}`);
     }
     this.pokemon = await nextFetch.json();
     this.template = this.createTemplate();
@@ -43,11 +43,9 @@ export class Card extends Component {
       .map(
         (item: any) =>
           `<li class="pokemon">
-          <span> #${item.url.split("/")[6]} </span>
+          <span> ${item.id} </span>
             <span> ${item.name.toUpperCase()}</span>
-            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${
-              item.url.split("/")[6]
-            }.gif" height="90">
+            <img src=${item.image} height="90">
             </li> `
       )
       .join(``);
